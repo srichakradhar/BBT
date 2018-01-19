@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @carcategory.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @carcategory.description %>
+</p>
+<p>
+<%= image_tag @carcategory.avatar.url{:medium}%>
+</p>
+<%= link_to 'Edit', edit_carcategory_path(@carcategory) %> |
+<%= link_to 'Back', carcategories_path %>

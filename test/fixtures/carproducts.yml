@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  model: MyString
+  fueltype: MyString
+  price: 1.5
+  carcategory: one
+
+two:
+  name: MyString
+  model: MyString
+  fueltype: MyString
+  price: 1.5
+  carcategory: two

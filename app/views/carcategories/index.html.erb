@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Carcategories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @carcategories.each do |carcategory| %>
+      <tr>
+        <td><%= carcategory.name %></td>
+        <td><%= carcategory.description %></td>
+        <td><%= image_tag carcategory.avatar.url{:medium} %></td>
+       
+        <td><%= link_to 'Show', display_path(carcategory.id) %></td>
+        <% if can? :create, carcategory %>
+        <td><%= link_to 'Edit', edit_carcategory_path(carcategory) %></td>
+        <td><%= link_to 'Destroy', carcategory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<% if can? :create, @carcategory %>
+<%= link_to 'New Carcategory', new_carcategory_path %>
+<%end%>

@@ -1,0 +1,8 @@
+<h1>Available products</h1>
+<% @products.each{|p|%>
+<%=p.name%><br>
+<%=p.model%><br>
+<%=p.fueltype%><br>
+<%=p.price%><br>
+<%= image_tag p.avatar.url{:medium} %>
+<%}%>

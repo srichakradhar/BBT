@@ -1,0 +1,46 @@
+<%= form_with(model: carproduct, local: true, html: { multipart: true }) do |form| %>
+  <% if carproduct.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(carproduct.errors.count, "error") %> prohibited this carproduct from being saved:</h2>
+
+      <ul>
+      <% carproduct.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :carproduct_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :model %>
+    <%= form.text_field :model, id: :carproduct_model %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fueltype %>
+    <%= form.text_field :fueltype, id: :carproduct_fueltype %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.text_field :price, id: :carproduct_price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :carcategory_id %>
+    <%= form.select :carcategory_id, @carcategories %>
+  </div>
+   <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :avatar, id: :carproduct_avatar %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @carproduct.name %>
+</p>
+
+<p>
+  <strong>Model:</strong>
+  <%= @carproduct.model %>
+</p>
+
+<p>
+  <strong>Fueltype:</strong>
+  <%= @carproduct.fueltype %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @carproduct.price %>
+</p>
+
+<p>
+  <strong>Carcategory:</strong>
+  <%= @carproduct.carcategory.name %>
+</p>
+<p>
+<%= image_tag @carproduct.avatar.url{:medium} %>
+</p>
+<%= link_to 'Edit', edit_carproduct_path(@carproduct) %> |
+<%= link_to 'Back', carproducts_path %>

@@ -1,0 +1,2 @@
+module CarcategoriesHelper
+end

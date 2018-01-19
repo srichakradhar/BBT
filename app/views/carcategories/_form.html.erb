@@ -1,0 +1,32 @@
+<%= form_with(model: carcategory, local: true, html: { multipart: true }) do |form| %>
+  <% if carcategory.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(carcategory.errors.count, "error") %> prohibited this carcategory from being saved:</h2>
+
+      <ul>
+      <% carcategory.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :carcategory_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :carcategory_description %>
+  </div>
+
+<div class="field">
+    <%= form.label :avatar %>
+    <%= form.file_field :avatar, id: :carcategory_avatar%>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
